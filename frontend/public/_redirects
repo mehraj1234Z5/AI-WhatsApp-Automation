@@ -1,0 +1,3 @@
+# Cloudflare Pages SPA Single Page Application routing rule
+# Redirects all frontend routes (e.g. /whatsapp, /content, /schedules) to index.html with HTTP 200
+/*    /index.html   200
