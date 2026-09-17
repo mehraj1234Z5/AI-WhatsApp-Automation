@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "AI-powered WhatsApp Content Automation System with local Ollama, React Dashboard, and Cloudflare Tunnel integration",
   "main": "backend/server.js",
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
     "start": "node backend/server.js",
     "dev:backend": "node --watch backend/server.js",
     "dev:frontend": "npm run dev --prefix frontend",
     "dev": "node scripts/dev.js",
-    "build": "npm run build --prefix frontend",
-    "build:frontend": "npm run build --prefix frontend",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "build:frontend": "npm --prefix frontend install && npm --prefix frontend run build",
     "test": "node tests/run-tests.js",
     "seed": "node database/seed.js",
     "install:all": "npm install && npm install --prefix frontend"
@@ -38,5 +41,9 @@
     "qrcode": "^1.5.4",
     "sqlite3": "^5.1.7",
     "whatsapp-web.js": "^1.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.1.0"
   }
 }
